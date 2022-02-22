@@ -19,8 +19,7 @@ public class ChurchController {
 	ChurchService churchService;
 	
 	 @CrossOrigin
-		@RequestMapping(value="/api/v1/getAllChurch",method=RequestMethod.GET
-				,consumes = MediaType.APPLICATION_JSON_VALUE
+		@RequestMapping(value="/api/v1/getAllChurch",method=RequestMethod.POST
 				,produces = MediaType.APPLICATION_JSON_VALUE )
 		@ResponseBody
 		public Map<?,?> getAllChurch (){

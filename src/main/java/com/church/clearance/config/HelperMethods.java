@@ -157,7 +157,7 @@ public Date getDateFormate(Date done){
 				return result;
 				
 			}
-			else if(!eid.substring(3,7).equals(Birthdate.substring(Birthdate.lastIndexOf("-")+1))){
+			else if(!eid.substring(3,7).equals(Birthdate.substring(0,Birthdate.indexOf("-")))){
 				
 				ResultReturn result = new ResultReturn();
 				result.getRes().put("code", 4000);

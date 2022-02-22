@@ -37,7 +37,7 @@ public class PersonalDataController {
 	@Autowired
 	HelperMethods helper;
 	
-	@CrossOrigin(origins = "*")
+	@CrossOrigin()
 	@RequestMapping(value="/api/v1/getSearchByEid",method=RequestMethod.POST
 			,consumes = MediaType.APPLICATION_JSON_VALUE
 			,produces = MediaType.APPLICATION_JSON_VALUE )
@@ -59,8 +59,8 @@ public class PersonalDataController {
 			                    @RequestParam (value = "name") String name,
 			                    @RequestParam (value = "birthDate") String birthDate,
 			                    @RequestParam (value = "birthLocation") String birthLocation,
-			                    @RequestParam (value = "baptism") String baptism,
 			                    @RequestParam (value = "baptismPlace") String baptismPlace,
+			                    @RequestParam (value = "baptism") String baptism,
 			                    @RequestParam (value = "education") String education,
 			                    @RequestParam (value = "educationDate") String educationDate) {
 		ResultReturn result=new ResultReturn();

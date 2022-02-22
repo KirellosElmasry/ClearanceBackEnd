@@ -53,6 +53,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.church.clearance.config.HelperMethods;
 import com.church.clearance.config.ResponseMap;
+import com.church.clearance.entities.PersonalData;
 import com.church.clearance.model.ClrancAddPrintedReq;
 import com.church.clearance.model.ClrancCancelReq;
 import com.church.clearance.model.ClrancStepOneReqModel;
@@ -422,4 +423,13 @@ public class ClearanceController {
 			
 		}
 	 
+	 @CrossOrigin()
+		@RequestMapping(value="/api/v1/getClearanceByEid",method=RequestMethod.POST
+				,consumes = MediaType.APPLICATION_JSON_VALUE
+				,produces = MediaType.APPLICATION_JSON_VALUE )
+		@ResponseBody
+		public Map<?,?> getClearanceByEid ( @RequestParam String eid){
+			
+			return clearanceService.getClearanceData(eid);
+		}
 }
