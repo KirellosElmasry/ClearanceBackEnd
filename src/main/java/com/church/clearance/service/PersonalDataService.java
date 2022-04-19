@@ -59,7 +59,15 @@ public class PersonalDataService {
 		} else if (personal != null && personal.getClearances().isEmpty()
 				|| (personal.getClearances().size() > 0 && personal.getClearances()
 						.get(personal.getClearances().size() - 1).getStatus().equalsIgnoreCase("Draft"))) {
-			result.getRes().put("personalData", personal);
+			
+			System.out.println(personal.getClearances());
+			
+			if(!personal.getClearances().isEmpty())
+				result.getRes().put("clearances",personal.getClearances()
+						.get(personal.getClearances().size() - 1));
+			else				
+				result.getRes().put("personalData", personal);
+			
 			result.getRes().put("code", 203);
 			result.getRes().put("msg", "welcome you can create new clearance");
 		} else {

@@ -73,7 +73,7 @@ public class ClearenceService {
 			if (cl == null) {
 
 				cl = new Clearance();
-
+				cl.setRefNo(help.getClearanceId());
 			}
 
 			cl.setAddress(clrancStepOne.getAddress());
@@ -87,7 +87,7 @@ public class ClearenceService {
 			cl.setMilitaryService(clrancStepOne.getMilitaryService());
 			cl.setPersonalData(personalDataDao.findOne(clrancStepOne.getEmirateId()));
 			cl.setRecognitionRegularityRate(clrancStepOne.getRecognitionRegularityRate());
-			cl.setRefNo(help.getClearanceId());
+			
 			cl.setStatus("Draft");
 			cl.setUser(userDao.findOne(clrancStepOne.getUserId()));
 
@@ -302,7 +302,7 @@ public class ClearenceService {
 				return res;
 			} else if (clrncStepThreeReq.getIsPreviousMarrage().equalsIgnoreCase("N")) {
 
-				cl.setIsPreviousEngagement(clrncStepThreeReq.getIsPreviousMarrage().toUpperCase());
+				cl.setIsPreviousMarriage(clrncStepThreeReq.getIsPreviousMarrage().toUpperCase());
 				if (cl.getPreviousMarriages().size() > 0) {
 
 					previousMarriageDao.delete(cl.getPreviousMarriages());

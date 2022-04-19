@@ -29,15 +29,16 @@ public class PersonalData implements Serializable {
 	@Column(name="name")
 	private String name;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="birthdate")
 	private Date birthDate;
 	
 	@Column(name="birth_location")
 	private String birthLocation;
 	
+	@Temporal(TemporalType.DATE)
 	@Column(name="baptism")
-	private String baptism;
+	private Date baptism;
 	
 	@Column(name="baptism_place")
 	private String baptismPlace;
@@ -45,7 +46,7 @@ public class PersonalData implements Serializable {
 	@Column(name="education")
 	private String education;
 	
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	@Column(name="education_date")
 	private Date educationDate;
 	
@@ -91,11 +92,11 @@ public class PersonalData implements Serializable {
 		this.birthLocation = birthLocation;
 	}
 
-	public String getBaptism() {
+	public Date getBaptism() {
 		return baptism;
 	}
 
-	public void setBaptism(String baptism) {
+	public void setBaptism(Date baptism) {
 		this.baptism = baptism;
 	}
 
@@ -146,8 +147,12 @@ public class PersonalData implements Serializable {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	
-	
-	
 
+	@Override
+	public String toString() {
+		return "PersonalData [emirateId=" + emirateId + ", name=" + name + ", birthDate=" + birthDate
+				+ ", birthLocation=" + birthLocation + ", baptism=" + baptism + ", baptismPlace=" + baptismPlace
+				+ ", education=" + education + ", educationDate=" + educationDate + ", pic=" + pic + ", clearances="
+				+ clearances + ", status=" + status + "]";
+	}
 }

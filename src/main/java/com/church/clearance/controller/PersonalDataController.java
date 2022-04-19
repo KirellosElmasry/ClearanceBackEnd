@@ -90,7 +90,7 @@ public class PersonalDataController {
 			}
 			PersonalDataRequest personalDataRequest = new PersonalDataRequest();
 			personalDataRequest.setEmirateId(emirateId);
-			personalDataRequest.setBaptism(baptism);
+			personalDataRequest.setBaptism(helper.getDate(baptism));
 			personalDataRequest.setBirthDate(helper.getDate(birthDate));
 			personalDataRequest.setBaptismPlace(baptismPlace);
 			personalDataRequest.setBirthLocation(birthLocation);

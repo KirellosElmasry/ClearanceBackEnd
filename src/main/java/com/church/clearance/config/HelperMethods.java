@@ -35,7 +35,7 @@ public class HelperMethods {
 public Date getDate(String done){
 	 
 		
-		String pattern = "dd-MM-yyyy";
+		String pattern = "yyyy-MM-dd";
 		DateFormat df = new SimpleDateFormat(pattern);
 		Date d1=null;
 		try {
@@ -177,13 +177,18 @@ public Date getDateFormate(Date done){
 	 
 	 public String getClearanceId(){
 		 
-		 int year= getYearFromDate();
+			/*
+			 * int year= getYearFromDate();
+			 * 
+			 * Integer clid= clearanceDao.findMaxClearanceId(String.valueOf(year)); clid =
+			 * clid+1;
+			 * 
+			 * 
+			 * return year+"/"+clid;
+			 */
 		 
-		 Integer clid=	 clearanceDao.findMaxClearanceId(String.valueOf(year));
-	    clid = clid+1;
-	
-	
-	return year+"/"+clid;
+		 return String.valueOf( new Date().getTime());
 		 
 	 }
+	 
 }

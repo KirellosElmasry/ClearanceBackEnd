@@ -20,7 +20,7 @@ public class PersonalDataRequest implements Serializable {
 	
 	private String birthLocation;
 	
-	private String baptism;
+	private Date baptism;
 	
 	private String baptismPlace;
 	
@@ -62,11 +62,11 @@ public class PersonalDataRequest implements Serializable {
 		this.birthLocation = birthLocation;
 	}
 
-	public String getBaptism() {
+	public Date getBaptism() {
 		return baptism;
 	}
 
-	public void setBaptism(String baptism) {
+	public void setBaptism(Date baptism) {
 		this.baptism = baptism;
 	}
 

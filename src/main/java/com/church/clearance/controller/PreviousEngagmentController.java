@@ -48,7 +48,7 @@ public class PreviousEngagmentController {
 			                    @RequestParam (value = "priestFather") String priestFather,
 			                    @RequestParam (value = "status") String status) {
 		ResultReturn result=new ResultReturn();
-		
+
 		String root = System.getProperty("user.dir");
 		 String filepath = File.separator +"src"+ File.separator +"main"+ File.separator +"resources"+ File.separator ;
 		 String UPLOADED_FOLDER = root+filepath+"PreviousEng";
@@ -61,7 +61,8 @@ public class PreviousEngagmentController {
 				result.getRes().put("msg","Can not create destination folder on server");
 				return result.getRes();
 			}
-		 String ref = refNo.substring(0,refNo.indexOf("/"))+"-"+refNo.substring(refNo.indexOf("/")+1);
+		// String ref = refNo.substring(0,refNo.indexOf("/"))+"-"+refNo.substring(refNo.indexOf("/")+1);
+		 String ref = refNo;
 		 if(engAttach != null){
 		
 		 String EnguploadedFileLocation = UPLOADED_FOLDER + File.separator + ref+"#eng"+engagmentDate+engAttach.getOriginalFilename().substring(engAttach.getOriginalFilename().indexOf("."));
